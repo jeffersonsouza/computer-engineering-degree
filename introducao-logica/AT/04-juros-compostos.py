@@ -11,6 +11,8 @@
 # código também disponível em:
 # https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/introducao-logica/AP/04-juros-compostos.py
 
+import matplotlib.pyplot as plt
+
 campos = [
     {'label': 'Valor inicial: R$', 'valor': 0},
     {'label': 'Rendimento por período (%):', 'valor': 0},
@@ -26,13 +28,27 @@ def calculo_juros(valor_inicial, rendimento_periodo, aporte_periodo, periodos):
 
     valor_inicio_periodo = valor_inicial
 
-    for periodo in range(1, periodos):
+    # Para a geração do gráfico
+    periodos_eixo_x = []
+    valores_eixo_y = []
+
+    for periodo in range(1, periodos + 1):
         rendimento = valor_inicio_periodo * rendimento_periodo / 100
         valor_final_periodo = valor_inicio_periodo + rendimento + aporte_periodo
         valor_inicio_periodo = valor_final_periodo
-        print(f"Após {periodo} períodos(s), o montante será de R$ {valor_final_periodo}.")
+        periodos_eixo_x.append(periodo)
+        valores_eixo_y.append(valor_final_periodo)
+        print(f"Após {periodo} períodos(s), o montante será de R$ {round(valor_final_periodo, 2)}.")
 
+    return [periodos_eixo_x, valores_eixo_y]
 
+def criar_grafico(eixo_x, eixo_y):
+    plt.plot(eixo_x, eixo_y)
+    plt.xlabel('Periodos (meses)')
+    plt.ylabel('Valor (R$)')
+    plt.title('Projeção dos Juros Compostos')
+
+    plt.show()
 
 for campo in campos:
     while True:
@@ -44,6 +60,6 @@ for campo in campos:
         else:
             break
 
-# calculo_juros(campo[0]['valor'], campo[1]['valor'], campo[2]['valor'], campo[3]['valor'])
+dados_grafico = calculo_juros(campos[0]['valor'], campos[1]['valor'], campos[2]['valor'], campos[3]['valor'])
 
-print(campos)
+criar_grafico(dados_grafico[0], dados_grafico[1])
