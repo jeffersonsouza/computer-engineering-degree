@@ -9,6 +9,8 @@ Não tem direito a voto (menor de 16 anos).
 
 Fluxo de exceção:
     - O programa deve verificar se a idade da pessoa é maior do que zero.
+
+https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/introducao-logica/TP3/02-idade-eleitoral.py
 '''
 
 def valida_situacao_eleitoral(idade):

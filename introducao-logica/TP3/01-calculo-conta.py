@@ -10,8 +10,11 @@ O programa deve verificar se o número total de pessoas é maior do que zero.
 O programa deve verificar se o percentual do serviço está dentro do intervalo válido, de 0 a 100.
 Caso valores inválidos sejam digitados, deve ser exibida a mensagem de erro “Valor inválido” e
 o programa deve ser interrompido.
- Dica: Em Python, o valor monetário calculado ao final pode ser informado, na função print(),
- usando vírgula como separador de casa decimal, em vez de pontos.
+
+Dica: Em Python, o valor monetário calculado ao final pode ser informado, na função print(),
+usando vírgula como separador de casa decimal, em vez de pontos.
+
+https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/introducao-logica/TP3/01-calculo-conta.py
 '''
 
 def calcula_valor_total(valor_conta, taxa_servico = 0):

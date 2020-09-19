@@ -8,6 +8,8 @@ participantes e, ao final, apresente apenas o nome e a nota do vencedor.
 Fluxo de exceção:
 
 O programa deve verificar se a nota da pessoa é maior ou igual a zero e menor ou igual a dez.
+
+https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/introducao-logica/TP3/03-concurso-fantasia.py
 '''
 
 def calcula_notas_concurso(participantes):
