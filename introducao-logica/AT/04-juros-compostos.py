@@ -9,7 +9,7 @@
 # cada período e uma quantidade de períodos
 
 # código também disponível em:
-# https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/introducao-logica/AP/04-juros-compostos.py
+# https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/introducao-logica/AT/04-juros-compostos.py
 
 import matplotlib.pyplot as plt
 

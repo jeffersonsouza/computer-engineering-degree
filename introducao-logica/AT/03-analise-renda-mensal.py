@@ -7,7 +7,7 @@
 # mensal total comprometido por cada custo.
 
 # código também disponível em:
-# https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/introducao-logica/AP/03-analise-renda-mensal.py
+# https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/introducao-logica/AT/03-analise-renda-mensal.py
 
 categorias = [
     {'tipo': 'Moradia', 'porcentagem_maxima': 30},
@@ -39,7 +39,7 @@ while True:
     else:
         break
 
-diagnostico = "\n Diagnóstico: \n\n"
+diagnostico = "\nDiagnóstico: \n\n"
 for categoria in categorias:
     while True:
         # Pergunta e valida os gastos
