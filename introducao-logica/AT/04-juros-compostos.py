@@ -36,8 +36,8 @@ def calculo_juros(valor_inicial, rendimento_periodo, aporte_periodo, periodos):
         rendimento = valor_inicio_periodo * rendimento_periodo / 100
         valor_final_periodo = valor_inicio_periodo + rendimento + aporte_periodo
         valor_inicio_periodo = valor_final_periodo
-        periodos_eixo_x.append(periodo)
-        valores_eixo_y.append(valor_final_periodo)
+        periodos_eixo_x.append(int(periodo))
+        valores_eixo_y.append(float(valor_final_periodo))
         print(f"Após {periodo} períodos(s), o montante será de R$ {round(valor_final_periodo, 2)}.")
 
     return [periodos_eixo_x, valores_eixo_y]
