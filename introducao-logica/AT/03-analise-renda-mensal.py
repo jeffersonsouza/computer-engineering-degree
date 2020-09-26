@@ -18,7 +18,7 @@ categorias = [
 def calculo_gasto_mensal(renda_mensal, tipo, limite_gastos, gastos):
     renda_mensal = float(renda_mensal + '.0')
     limite_gastos = float(limite_gastos)
-    gastos = float(gastos)
+    gastos = float(gastos + '.0')
 
     percentual_gasto = round(gastos / renda_mensal * 100, 2)
     valor_limite = round(limite_gastos * renda_mensal / 100, 2)
@@ -33,8 +33,8 @@ def calculo_gasto_mensal(renda_mensal, tipo, limite_gastos, gastos):
 while True:
     # Pergunta e valida a renda mensal
     renda_mensal = input("Renda Mensal: R$ ")
-
-    if(not renda_mensal.replace(',', '').replace('.', '').isnumeric() or float(renda_mensal) <= 0):
+    renda_mensal = renda_mensal.replace(',', '').replace('.', '')
+    if(not renda_mensal.isnumeric()):
         print("A renda informada é inválida.")
     else:
         break
@@ -44,8 +44,8 @@ for categoria in categorias:
     while True:
         # Pergunta e valida os gastos
         gasto = input(f"Gastos totais com {categoria['tipo']}: R$ ") or '0'
-
-        if(not gasto.replace(',', '').replace('.', '').isnumeric()):
+        gasto = gasto.replace(',', '').replace('.', '')
+        if(not gasto.isnumeric()):
             print("O valor informado é inválido.")
         else:
             diagnostico += calculo_gasto_mensal(renda_mensal, categoria['tipo'], categoria['porcentagem_maxima'], gasto)

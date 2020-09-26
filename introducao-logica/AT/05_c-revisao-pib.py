@@ -31,7 +31,7 @@ def gera_grafico_projecao_pib(pais):
 
             plt.plot(eixo_x, eixo_y.astype(float))
             plt.xlabel('Ano')
-            plt.ylabel('Valor (em Trilhão)')
+            plt.ylabel('Valor US$ (em Trilhões)')
             plt.title(f"{pais_pib[0]} - Evolução de PIB")
             plt.show()
 
