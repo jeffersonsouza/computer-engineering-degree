@@ -15,7 +15,7 @@ def isPrime(number):
 
 while True:
     data = input(f"Informe um número inteiro: ")
-    data = int(data)
+    data = int(data) if data.isnumeric() else False
     if data:
         break
 
