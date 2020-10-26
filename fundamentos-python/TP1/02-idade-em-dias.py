@@ -21,4 +21,4 @@ for campo in campos:
         else:
             break
 
-print(f"A sua idade, em dias, é de aproximadamente {converte_idade_dias(campos[0]['valor'], campos[1]['valor'], campos[2]['valor']):d} dias e contando...")
+print(f"A sua idade, em dias, é de aproximadamente {converte_idade_dias(campos[0]['valor'], campos[1]['valor'], campos[2]['valor'])} dias e contando...")
