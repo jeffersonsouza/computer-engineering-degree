@@ -1,4 +1,5 @@
-# Dada uma tupla e um elemento, elimine esse elemento da tupla.
+# Disponível em https://github.com/jeffersonsouza/computer-engineering-degree/tree/master/fundamentos-python/TP1
+# # Dada uma tupla e um elemento, elimine esse elemento da tupla.
 
 def remove_tupla(tupla, elemento):
     if elemento in tupla:

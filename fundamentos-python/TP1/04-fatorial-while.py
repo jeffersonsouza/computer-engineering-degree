@@ -1,3 +1,4 @@
+# Disponível em https://github.com/jeffersonsouza/computer-engineering-degree/tree/master/fundamentos-python/TP1
 # Escreva uma função em Python que calcule o fatorial de um dado número N usando um for.
 # O fatorial de N=0 é um. O fatorial de N é (para N > 0): N x (N-1) x (N-2) x … x 3 x 2 x 1.
 # Por exemplo, para N=5 o fatorial é: 5 x 4 x 3 x 2 x 1 = 120.

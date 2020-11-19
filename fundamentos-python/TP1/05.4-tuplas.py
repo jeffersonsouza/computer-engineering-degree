@@ -1,3 +1,4 @@
+# Disponível em https://github.com/jeffersonsouza/computer-engineering-degree/tree/master/fundamentos-python/TP1
 # Dada uma tupla, retorne 2 tuplas onde cada uma representa uma metade da tupla original.
 
 def inverte_tupla(tupla):

@@ -1,3 +1,4 @@
+# Disponível em https://github.com/jeffersonsouza/computer-engineering-degree/tree/master/fundamentos-python/TP1
 # Escreva uma função que receba uma string e um número inteiro x e rotacione
 # a string x posições para a esquerda. Assuma que a string tem pelo menos x caracteres.
 

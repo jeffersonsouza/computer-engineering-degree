@@ -1,3 +1,4 @@
+# Disponível em https://github.com/jeffersonsouza/computer-engineering-degree/tree/master/fundamentos-python/TP1
 # Dada uma tupla e um elemento, verifique se o elemento existe na tupla e retorne o indice do mesmo
 
 def retorna_indice(tupla, elemento):

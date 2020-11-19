@@ -1,3 +1,4 @@
+# Disponível em https://github.com/jeffersonsouza/computer-engineering-degree/tree/master/fundamentos-python/TP1
 # Escreva um programa em Python que receba três valores reais X, Y e Z, guarde esses valores numa tupla e
 # verifique se esses valores podem ser os comprimentos dos lados de um triângulo e, neste caso,
 # retorne qual o tipo de triângulo formado.
