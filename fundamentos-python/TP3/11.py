@@ -53,7 +53,6 @@ while running:
 
 
     circle_position_x += game_speed if direction == 'right' else -game_speed
-    clock_counter = 0
 
     draw_circle(Position(x=circle_position_x, y=circle_position_y))
 
