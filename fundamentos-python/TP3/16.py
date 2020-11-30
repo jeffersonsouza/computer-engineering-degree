@@ -1,9 +1,13 @@
-# Usando a biblioteca Pygame, escreva um programa que possui uma função que
-# desenha um círculo azul de 100 px de diâmetro no centro da tela. (código e printscreen)
+# Usando a biblioteca Pygame, escreva um programa que desenha na tela
+# estrelas de 5 pontas de tamanhos aleatórios a cada vez que o usuário
+# clicar na tela. A ponta superior da estrela deve estar situada onde
+# o usuário clicou. (código e printscreen)
 #
 # Também disponível em https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/fundamentos-python/TP3/
 
-import math, pygame
+import math
+import pygame
+import random
 from collections import namedtuple
 
 # Coordinates
@@ -18,13 +22,14 @@ screen = pygame.display.set_mode(screenSize)
 
 # Colors
 background = (232, 232, 232)
-blue = (41, 59, 136)
 
 # Change title and logo
-pygame.display.set_caption('Jefferson Souza dos Santos - TP3 - Item 15')
+pygame.display.set_caption('Jefferson Souza dos Santos - TP3 - Item 16')
 
+# array to store stars points
+stars = []
 
-def draw_star(screen, color, sides, radius, position):
+def get_star_points(sides, radius, position):
     points = []
 
     for n in range(sides * 2):
@@ -38,7 +43,7 @@ def draw_star(screen, color, sides, radius, position):
 
         points.append(point)
 
-    return pygame.draw.polygon(screen, color, points)
+    return points
 
 
 # Game loop
@@ -51,11 +56,19 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            click_position = pygame.mouse.get_pos()
+
+            # get star points and color
+            color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+            radius = random.randint(25, 150)
+            stars.append((get_star_points(5, radius, [click_position[0], click_position[1] + radius]), color))
+
     # paint the screen
     screen.fill(background)
 
-    # draw my star
-    draw_star(screen, blue, 5, 100, [screen.get_width() // 2, screen.get_height() // 2])
+    for star in stars:
+        pygame.draw.polygon(screen, star[1], star[0])
 
     # Update the display
     pygame.display.update()

@@ -1,7 +1,8 @@
-# Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha
-# um quadrado vermelho de 100 px de lado no centro da tela.
-# O quadrado deve ser capaz de se movimentar vertical e horizontalmente através
-# de teclas do computador. Pode ser ‘a’,’s’,’d’,’w’ ou as setas do teclado. (código e printscreen)
+# Usando a biblioteca Pygame, escreva um programa que possui uma função que
+# desenha um círculo azul de 100 px de diâmetro no centro da tela que se
+# move da esquerda para a direita. Sempre que chegar na extremidade direita,
+# o círculo deve voltar à extremidade esquerda, retomando o movimento da
+# esquerda para a direita. (código e printscreen)
 #
 # Também disponível em https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/fundamentos-python/TP3/
 

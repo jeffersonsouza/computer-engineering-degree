@@ -1,7 +1,9 @@
-# Usando a biblioteca Pygame, escreva um programa que possui uma função que desenha
-# um quadrado vermelho de 100 px de lado no centro da tela.
-# O quadrado deve ser capaz de se movimentar vertical e horizontalmente através
-# de teclas do computador. Pode ser ‘a’,’s’,’d’,’w’ ou as setas do teclado. (código e printscreen)
+# Usando a biblioteca Pygame, escreva um programa que possui uma função
+# que desenha um círculo amarelo de 100 px de diâmetro no centro da tela
+# que se move sempre em velocidade permanente na direção que o usuário
+# indicar através das teclas. Similar ao item anterior, sempre que chegar
+# em uma extremidade, o círculo deve voltar à extremidade oposta e continuar
+# o com a última direção que o usuário indicou. (código e printscreen)
 #
 # Também disponível em https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/fundamentos-python/TP3/
 
@@ -22,7 +24,7 @@ circle_radius = 50
 
 # Colors
 background = (232, 232, 232)
-blue = (41,59,136)
+yellow = (255, 197, 1)
 
 # Change title and logo
 pygame.display.set_caption('Jefferson Souza dos Santos - TP3 - Item 12')
@@ -32,7 +34,7 @@ circle_position_y = screen.get_height() // 2 - circle_radius
 direction = 'right'
 
 def draw_circle(position: Position):
-    pygame.draw.circle(screen, blue, position, circle_radius)
+    pygame.draw.circle(screen, yellow, position, circle_radius)
 
 # Game loop
 running = True
@@ -43,6 +45,13 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                direction = 'left'
+
+            if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                direction = 'right'
 
     # paint the screen
     screen.fill(background)

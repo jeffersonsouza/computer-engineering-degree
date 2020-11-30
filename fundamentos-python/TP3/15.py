@@ -1,9 +1,10 @@
-# Usando a biblioteca Pygame, escreva um programa que possui uma função que
-# desenha um círculo azul de 100 px de diâmetro no centro da tela. (código e printscreen)
+# Usando a biblioteca Pygame, escreva um programa que possui uma função
+# que desenha na tela um estrela de 5 pontas no tamanho que preferir. (código e printscreen)
 #
 # Também disponível em https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/fundamentos-python/TP3/
 
-import math, pygame
+import math
+import pygame
 from collections import namedtuple
 
 # Coordinates
