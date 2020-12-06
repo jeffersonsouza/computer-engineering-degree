@@ -1,10 +1,6 @@
-# Dentre os seguintes países nórdicos: Suécia, Dinamarca e Noruega,
-# verifique: No século XXI (a partir de 2001), qual foi o maior
-# medalhista de ouro, considerando apenas as seguintes modalidades:
-#     - Curling
-#     - Patinação no gelo (skating)
-#     - Esqui (skiing)
-#     - Hóquei sobre o gelo (ice hockey)
+# Obtenha, usando requests ou urllib, o conteúdo sobre as PyLadies no link http://brasil.pyladies.com/about e:
+# Conte todas as palavras no corpo da página, e indique quais palavras apareceram apenas uma vez.
+# Conte quantas vezes apareceu a palavra ladies no conteúdo da página
 #
 # Também disponível em https://github.com/jeffersonsouza/computer-engineering-degree/blob/master/fundamentos-python/AT/
 
