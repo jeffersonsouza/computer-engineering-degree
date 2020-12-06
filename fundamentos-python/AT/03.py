@@ -17,7 +17,6 @@ def potencia(base, expoente):
 
     resultado = base
     for n in range(1, expoente):
-        print(resultado, expoente)
         resultado *= base
 
     return resultado

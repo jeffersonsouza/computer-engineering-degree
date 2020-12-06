@@ -9,7 +9,6 @@
 import pygame, sys, random
 from collections import namedtuple
 
-
 class Game:
     # Coordinates
     Coordinate = namedtuple('Coordinate', ['x', 'y'])
