@@ -103,7 +103,7 @@ class Game:
         x = random.randint(25, self.screen.get_width() - 25)
         y = random.randint(25, self.screen.get_height() - 25)
 
-        return pygame.Rect(x, y, 50, 50)
+        return pygame.Rect(x, y, 60, 50)
 
     def collision_checker(self, rect):
         for square in self.squares:

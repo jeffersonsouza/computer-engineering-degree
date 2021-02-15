@@ -1,5 +1,6 @@
 import pygame
 import psutil
+import cpuinfo
 from collections import namedtuple
 
 # Game init
@@ -12,6 +13,8 @@ Coordinate = namedtuple('Coordinate', ['x', 'y'])
 
 # Configs
 screenSize = Coordinate(x=800, y=600)
+cpu_surface_size = Coordinate(x=800, y=150)
+cores_surface_size = Coordinate(x=800, y=150)
 screen = pygame.display.set_mode(screenSize)
 
 # Change title
@@ -26,6 +29,9 @@ black = (0,0,0)
 darkGrey = (34,40,49)
 red = (240,84,84)
 colors = [background, black, darkBlue, darkGrey, white]
+
+cpu_detail_surface = pygame.surface.Surface(cpu_surface_size)
+cores_detail_surface = pygame.surface.Surface(cores_surface_size)
 
 def memory_usage():
     memory = psutil.virtual_memory()
@@ -49,6 +55,30 @@ def cpu_usage():
     pygame.draw.rect(screen, darkGrey, (20, 170, percentage_used, 70))
     text = font.render(f"Uso de CPU: {cpu_percent}%", 1, darkGrey)
     screen.blit(text, (20, 150))
+
+def render_cpu_detail(info, surface, text, key, position):
+    # CPU Name
+    text = font.render(f"{text}: {info[key]}", 1, darkGrey)
+    surface.blit(text, (0, position))
+
+def cpu_detail():
+    info = cpuinfo.get_cpu_info()
+
+    render_cpu_detail(info, cpu_detail_surface, 'Processador', 'brand_raw', 20)
+    render_cpu_detail(info, cpu_detail_surface, 'Arquitetura', 'arch_string_raw', 40)
+    render_cpu_detail(info, cpu_detail_surface, 'Bits', 'arch_string_raw', 60)
+    # Cores
+    # text = font.render(f"Cores: {psutil.cpu_count(logical=False)} físicos | {psutil.cpu_count()} lógicos", 1, darkGrey)
+    # cpu_detail_surface.blit(text, (20, 80))
+
+    cpu_detail_surface.fill(background)
+
+    screen.blit(cpu_detail_surface, (20, screenSize.y - 230))
+
+def cores_usage():
+    usage = psutil.cpu_percent(interval=1, percpu=True)
+
+    print(usage)
 
 def disk_usage():
     hard_drive = psutil.disk_usage('.')
@@ -80,13 +110,15 @@ while running:
         memory_usage()
         cpu_usage()
         disk_usage()
+        cpu_detail()
+        cores_usage()
         counter = 0
 
     # Update the display
     pygame.display.update()
 
     # Update the display
-    clock.tick(150)
+    clock.tick(60)
     counter += 1
 
 pygame.display.quit()
